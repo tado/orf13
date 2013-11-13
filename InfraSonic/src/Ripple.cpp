@@ -35,9 +35,8 @@ void Ripple::draw(){
     float resolution[] = {width, height};
     float time = ofGetElapsedTimef();
     if (hands.size() > 0) {
-        //baseFreq += palmNormals[0].z / 10.0;
         baseFreq = hands[0].palmPosition().y / 6.0;
-        detune = baseFreq * palmNormals[0].x / 10.0;
+        detune = baseFreq * palmNormals[0].x / 2.0;
     } else {
         baseFreq = 20.0;
         detune = 0.0;
@@ -61,11 +60,13 @@ void Ripple::draw(){
     
     fbo.draw(0, ofGetHeight(), ofGetWidth(), -ofGetHeight());
     
-    ofDrawBitmapString("freq = " + ofToString(freq[0], 0) + ", " + ofToString(freq[1], 0), 20, 20);
-    
+    /*
+     ofDrawBitmapString("freq = " + ofToString(freq[0], 0) + ", " + ofToString(freq[1], 0), 20, 20);
     if (hands.size() > 0) {
         ofDrawBitmapString("palm z = " + ofToString(hands[0].palmPosition().y, 0), 20, 40);
     }
+     */
+    
 }
 
 void Ripple::exit(){

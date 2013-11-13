@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F0240C71-CFD5-451E-A91B-D05369AD34B9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>InfraSonic</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FDFF91D1-C51D-44B4-BA9D-7AF4A69322BD</key>
+		<string>https://github.com/tado/orf13.git</string>
+		<key>FE70A816-FCB7-4E9C-ABEE-061ABC2D4F22</key>
+		<string>http://ofxsupercollider.googlecode.com/svn/trunk/ofxSuperCollider</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>InfraSonic/InfraSonic.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FDFF91D1-C51D-44B4-BA9D-7AF4A69322BD</key>
+		<string>../../..</string>
+		<key>FE70A816-FCB7-4E9C-ABEE-061ABC2D4F22</key>
+		<string>../../../../../addons/ofxSuperCollider</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>FE70A816-FCB7-4E9C-ABEE-061ABC2D4F22</key>
+		<string>http://ofxsupercollider.googlecode.com/svn</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/tado/orf13.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FDFF91D1-C51D-44B4-BA9D-7AF4A69322BD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
+			<string>branches</string>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlRepositoryTagsRelativeLocationKey</key>
+			<string>tags</string>
+			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
+			<string>trunk</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FE70A816-FCB7-4E9C-ABEE-061ABC2D4F22</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxSuperCollider</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FDFF91D1-C51D-44B4-BA9D-7AF4A69322BD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>orf13</string>
+		</dict>
+	</array>
+</dict>
+</plist>
