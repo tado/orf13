@@ -7,9 +7,8 @@ uniform vec2 mouse;
 uniform vec2 resolution;
 uniform float freq_r;
 uniform float freq_l;
-
-float waveLength = 200.0;
-float speed = 100.0;
+uniform float waveLength;
+uniform float speed;
 
 void main( void ) {
     

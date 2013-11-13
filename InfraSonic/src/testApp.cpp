@@ -6,7 +6,7 @@ void testApp::setup(){
 	// initialise state machine
 	stateMachine.addState<Ripple>();
 	stateMachine.changeState("ripple");
-    ofHideCursor();
+    //ofHideCursor();
 }
 
 //--------------------------------------------------------------
