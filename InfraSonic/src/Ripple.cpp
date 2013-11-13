@@ -9,7 +9,7 @@ void Ripple::setup(){
     shader.load("shader");
     
     baseFreq = 20;
-    detune = 0;
+    detune = 1;
     freq[0] = freq[1] = baseFreq;
     
     ofxSuperColliderServer::init();
@@ -39,7 +39,7 @@ void Ripple::draw(){
         detune = baseFreq * palmNormals[0].x / 2.0;
     } else {
         baseFreq = 20.0;
-        detune = 0.0;
+        detune = 1.0;
     }
     
     freq[0] = baseFreq + detune;

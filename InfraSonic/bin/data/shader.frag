@@ -21,7 +21,7 @@ void main( void ) {
     vec2 pos2 = vec2(0.75, 0.5)*resolution;
 	vec2 lenVec2 = pos2.xy - gl_FragCoord.xy;
 	float dist2 = 1.0 - length(lenVec2);
-	float wave2 = (sin((dist2/waveLength) * freq_r + time*speed) + 1.0) / 2.0;
+	float wave2 = (cos((dist2/waveLength) * freq_r + time*speed) + 1.0) / 2.0;
     
     float add = (wave1 + wave2) / 2.0 ;
     gl_FragColor = vec4(add, add, add, 1.);
