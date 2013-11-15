@@ -1,8 +1,9 @@
 #pragma once
 
+#include "ofxLeapMotion.h"
+
 class SharedData{
 public:
     
-    string sharedMsg;
-    
+    ofxLeapMotion leap;
 };

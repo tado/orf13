@@ -1,35 +1,41 @@
 #include "Ripple.h"
 
 void Ripple::setup(){
-    leap.open();
-    width = ofGetWidth() / 2;
-    height = ofGetHeight() / 2;
-    
-    fbo.allocate(width, height);
-    shader.load("shader");
-    
-    baseFreq = interpBaseFreq = 20;
-    detune = 1;
-    freq[0] = freq[1] = baseFreq;
-    
-    ofxSuperColliderServer::init();
-    
-    synth = new ofxSCSynth("ripple");
-    synth->create();
-    
     showGui = false;
     ofHideCursor();
     gui.setup();
+    gui.add(initFreq.setup("Init Frequency", 50, 10, 100));
     gui.add(waveLength.setup("Wave Length", 200, 0, 800));
     gui.add(waveSpeed.setup("Wave Speed", 100, 0, 200));
     gui.add(interp.setup("Interpolate", 100, 1, 800));
     gui.add(detuneScale.setup("Detune Scale", 10, 1, 20));
     gui.add(showLog.setup("Show Log", false));
+    gui.loadFromFile("settings.xml");
+    
+    width = ofGetWidth() / 2;
+    height = ofGetHeight() / 2;
+    
+    fbo.allocate(width, height);
+    shader.load("ripple");
+    
+    baseFreq = interpBaseFreq = initFreq;
+    detune = 1;
+    freq[0] = freq[1] = baseFreq;
+    
+    synth = new ofxSCSynth("ripple");   
+}
+
+void Ripple::stateEnter(){
+    synth->create();
+}
+
+void Ripple::stateExit(){
+    synth->free();
 }
 
 void Ripple::update(){
-    hands = leap.getLeapHands();
-    if( leap.isFrameNew() && hands.size() ){
+    hands = getSharedData().leap.getLeapHands();
+    if( getSharedData().leap.isFrameNew() && hands.size() ){
         palmNormals.clear();
         for(int i = 0; i < hands.size(); i++){
             ofVec3f norm = ofVec3f(hands[i].palmNormal().x, hands[i].palmNormal().y, hands[i].palmNormal().z);
@@ -46,7 +52,7 @@ void Ripple::draw(){
         baseFreq = hands[0].palmPosition().y / 6.0;
         detune = baseFreq * palmNormals[0].x / detuneScale;
     } else {
-        baseFreq = 20.0;
+        baseFreq = initFreq;
         detune = 1.0;
     }
     

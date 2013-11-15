@@ -3,6 +3,8 @@
 #include "ofMain.h"
 #include "ofxStateMachine.h"
 #include "SharedData.h"
+#include "ofxSuperCollider.h"
+#include "ofxSuperColliderServer.h"
 
 class testApp : public ofBaseApp{
     

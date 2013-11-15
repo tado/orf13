@@ -8,6 +8,10 @@
 #include "ofxGui.h"
 
 class Ripple : public itg::ofxState<SharedData> {
+public:
+    void stateEnter();
+    void stateExit();
+    
     void setup();
     void update();
     void draw();
@@ -16,10 +20,8 @@ class Ripple : public itg::ofxState<SharedData> {
     
     string getName();
     
-    ofxLeapMotion leap;
+    //ofxLeapMotion leap;
     vector <ofxLeapMotionSimpleHand> simpleHands;
-    ofEasyCam cam;
-    ofLight light;
     vector <ofVec3f> palmNormals;
     vector <Hand> hands;
     
@@ -33,6 +35,7 @@ class Ripple : public itg::ofxState<SharedData> {
     
     bool showGui;
     ofxPanel gui;
+    ofxFloatSlider initFreq;
     ofxFloatSlider waveLength;
     ofxFloatSlider waveSpeed;
     ofxFloatSlider interp;

@@ -1,12 +1,20 @@
 #include "testApp.h"
 #include "Ripple.h"
+#include "Noise.h"
 
 //--------------------------------------------------------------
 void testApp::setup(){
+    ofxSuperColliderServer::init();
+    
+    stateMachine.getSharedData().leap.open();
+
 	// initialise state machine
 	stateMachine.addState<Ripple>();
-	stateMachine.changeState("ripple");
-    //ofHideCursor();
+    stateMachine.addState<Noise>();
+	//ofHideCursor();
+    
+    //stateMachine.changeState("ripple");
+    stateMachine.changeState("noise");
 }
 
 //--------------------------------------------------------------

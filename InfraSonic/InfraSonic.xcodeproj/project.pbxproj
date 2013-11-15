@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1883C1B91836274D002920B6 /* Noise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1883C1B71836274D002920B6 /* Noise.cpp */; };
+		1883C1BC18363E8F002920B6 /* noise.frag in Sources */ = {isa = PBXBuildFile; fileRef = 1883C1BA18363E8F002920B6 /* noise.frag */; };
+		1883C1BD18363E8F002920B6 /* ripple.frag in Sources */ = {isa = PBXBuildFile; fileRef = 1883C1BB18363E8F002920B6 /* ripple.frag */; };
 		1899B40618330B8C00FB4375 /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1899B3F518330B8C00FB4375 /* ofxBaseGui.cpp */; };
 		1899B40718330B8C00FB4375 /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1899B3F718330B8C00FB4375 /* ofxButton.cpp */; };
 		1899B40818330B8C00FB4375 /* ofxGuiGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1899B3FA18330B8C00FB4375 /* ofxGuiGroup.cpp */; };
@@ -16,7 +19,6 @@
 		1899B40C18330B8C00FB4375 /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1899B40218330B8C00FB4375 /* ofxSliderGroup.cpp */; };
 		1899B40D18330B8C00FB4375 /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1899B40418330B8C00FB4375 /* ofxToggle.cpp */; };
 		1899B5F418330C5300FB4375 /* Ripple.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1899B5F218330C5300FB4375 /* Ripple.cpp */; };
-		1899B5F818331A0F00FB4375 /* shader.frag in Sources */ = {isa = PBXBuildFile; fileRef = 1899B5F718331A0F00FB4375 /* shader.frag */; };
 		1899C96018332B5600FB4375 /* ofxSCBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1899B60918332B4000FB4375 /* ofxSCBuffer.cpp */; };
 		1899C96118332B5600FB4375 /* ofxSCBus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1899B60B18332B4000FB4375 /* ofxSCBus.cpp */; };
 		1899C96218332B5600FB4375 /* ofxSCGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1899B60D18332B4000FB4375 /* ofxSCGroup.cpp */; };
@@ -107,6 +109,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1883C1B61836081E002920B6 /* InfraSonicExampleDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfraSonicExampleDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1883C1B71836274D002920B6 /* Noise.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Noise.cpp; sourceTree = "<group>"; };
+		1883C1B81836274D002920B6 /* Noise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Noise.h; sourceTree = "<group>"; };
+		1883C1BA18363E8F002920B6 /* noise.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = noise.frag; path = bin/data/noise.frag; sourceTree = SOURCE_ROOT; };
+		1883C1BB18363E8F002920B6 /* ripple.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = ripple.frag; path = bin/data/ripple.frag; sourceTree = SOURCE_ROOT; };
 		1899B3F518330B8C00FB4375 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBaseGui.cpp; sourceTree = "<group>"; };
 		1899B3F618330B8C00FB4375 /* ofxBaseGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBaseGui.h; sourceTree = "<group>"; };
 		1899B3F718330B8C00FB4375 /* ofxButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxButton.cpp; sourceTree = "<group>"; };
@@ -129,7 +136,6 @@
 		1899B5F218330C5300FB4375 /* Ripple.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ripple.cpp; sourceTree = "<group>"; };
 		1899B5F318330C5300FB4375 /* Ripple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ripple.h; sourceTree = "<group>"; };
 		1899B5F518330C8D00FB4375 /* SharedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedData.h; sourceTree = "<group>"; };
-		1899B5F718331A0F00FB4375 /* shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shader.frag; path = bin/data/shader.frag; sourceTree = SOURCE_ROOT; };
 		1899B60918332B4000FB4375 /* ofxSCBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSCBuffer.cpp; sourceTree = "<group>"; };
 		1899B60A18332B4000FB4375 /* ofxSCBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSCBuffer.h; sourceTree = "<group>"; };
 		1899B60B18332B4000FB4375 /* ofxSCBus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSCBus.cpp; sourceTree = "<group>"; };
@@ -251,7 +257,6 @@
 		1899DE5F1833303B00FB4375 /* libsndfile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsndfile.a; sourceTree = "<group>"; };
 		1899DE611833303C00FB4375 /* ofxSuperColliderServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSuperColliderServer.cpp; sourceTree = "<group>"; };
 		1899DE621833303C00FB4375 /* ofxSuperColliderServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSuperColliderServer.h; sourceTree = "<group>"; };
-		18F3C89318334AEE00A6D092 /* InfraSonicExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = InfraSonicExample.app; path = /Users/tado/Documents/openFrameworks/of_v0.8.0_osx_release/apps/orf13/InfraSonic/bin/InfraSonicExample.app; sourceTree = "<absolute>"; };
 		18F3C8C218334E7A00A6D092 /* Leap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Leap.h; sourceTree = "<group>"; };
 		18F3C8C318334E7A00A6D092 /* LeapMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeapMath.h; sourceTree = "<group>"; };
 		18F3C8C618334E7A00A6D092 /* libLeap.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = libLeap.so; sourceTree = "<group>"; };
@@ -803,6 +808,7 @@
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
 				BB4B014C10F69532006C3DED /* addons */,
 				E45BE5980E8CC70C009D7055 /* frameworks */,
+				1883C1B61836081E002920B6 /* InfraSonicExampleDebug.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -814,8 +820,11 @@
 				E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */,
 				1899B5F318330C5300FB4375 /* Ripple.h */,
 				1899B5F218330C5300FB4375 /* Ripple.cpp */,
+				1883C1B81836274D002920B6 /* Noise.h */,
+				1883C1B71836274D002920B6 /* Noise.cpp */,
 				1899B5F518330C8D00FB4375 /* SharedData.h */,
-				1899B5F718331A0F00FB4375 /* shader.frag */,
+				1883C1BB18363E8F002920B6 /* ripple.frag */,
+				1883C1BA18363E8F002920B6 /* noise.frag */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -849,7 +858,7 @@
 			);
 			name = InfraSonicExample;
 			productName = myOFApp;
-			productReference = 18F3C89318334AEE00A6D092 /* InfraSonicExample.app */;
+			productReference = 1883C1B61836081E002920B6 /* InfraSonicExampleDebug.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -924,6 +933,7 @@
 				1899C96518332B5600FB4375 /* ofxSCServer.cpp in Sources */,
 				1899B40D18330B8C00FB4375 /* ofxToggle.cpp in Sources */,
 				1899C96418332B5600FB4375 /* ofxSCResourceAllocator.cpp in Sources */,
+				1883C1BD18363E8F002920B6 /* ripple.frag in Sources */,
 				1899B40C18330B8C00FB4375 /* ofxSliderGroup.cpp in Sources */,
 				1899B40618330B8C00FB4375 /* ofxBaseGui.cpp in Sources */,
 				1899B40B18330B8C00FB4375 /* ofxSlider.cpp in Sources */,
@@ -932,12 +942,12 @@
 				1899C96018332B5600FB4375 /* ofxSCBuffer.cpp in Sources */,
 				1899CB0818332D9800FB4375 /* IpEndpointName.cpp in Sources */,
 				1899B40A18330B8C00FB4375 /* ofxPanel.cpp in Sources */,
+				1883C1B91836274D002920B6 /* Noise.cpp in Sources */,
 				1899CB1118332D9800FB4375 /* ofxOscBundle.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				1899C96618332B5600FB4375 /* ofxSCSynth.cpp in Sources */,
 				1899CB1418332D9800FB4375 /* ofxOscReceiver.cpp in Sources */,
 				1899CB1518332D9800FB4375 /* ofxOscSender.cpp in Sources */,
-				1899B5F818331A0F00FB4375 /* shader.frag in Sources */,
 				1899CB0C18332D9800FB4375 /* UdpSocketWin.cpp in Sources */,
 				1899B5F418330C5300FB4375 /* Ripple.cpp in Sources */,
 				1899CB0B18332D9800FB4375 /* NetworkingUtilsWin.cpp in Sources */,
@@ -946,6 +956,7 @@
 				1899CB0F18332D9800FB4375 /* OscReceivedElements.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
 				1899C96218332B5600FB4375 /* ofxSCGroup.cpp in Sources */,
+				1883C1BC18363E8F002920B6 /* noise.frag in Sources */,
 				1899B40918330B8C00FB4375 /* ofxLabel.cpp in Sources */,
 				1899DF5F1833303C00FB4375 /* ofxSuperColliderServer.cpp in Sources */,
 				1899C96118332B5600FB4375 /* ofxSCBus.cpp in Sources */,
