@@ -4,6 +4,6 @@
 
 class SharedData{
 public:
-    
     ofxLeapMotion leap;
+    bool showGui;
 };

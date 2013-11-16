@@ -1,13 +1,13 @@
 #include "Ripple.h"
 
 void Ripple::setup(){
-    showGui = false;
     gui.setup();
     gui.add(initFreq.setup("Init Frequency", 50, 10, 100));
     gui.add(waveLength.setup("Wave Length", 200, 0, 800));
     gui.add(waveSpeed.setup("Wave Speed", 100, 0, 200));
     gui.add(interp.setup("Interpolate", 100, 1, 800));
     gui.add(detuneScale.setup("Detune Scale", 10, 1, 20));
+    gui.add(outLevel.setup("Audio Level", 0.5, 0, 1.0));
     gui.add(showLog.setup("Show Log", false));
     gui.loadFromFile("settings.xml");
     
@@ -62,6 +62,7 @@ void Ripple::draw(){
     
     synth->set("freq_l", freq[0]);
     synth->set("freq_r", freq[1]);
+    synth->set("amp", outLevel);
 
     fbo.begin();
     shader.begin();
@@ -84,7 +85,7 @@ void Ripple::draw(){
         }
     }
     
-    if (showGui) {
+    if (getSharedData().showGui) {
         gui.draw();
     }
 }
@@ -94,8 +95,13 @@ void Ripple::exit(){
 }
 
 void Ripple::mouseReleased(int x, int y, int button){
-    showGui? showGui = false : showGui = true;
-    showGui? ofShowCursor() : ofHideCursor();
+    if(getSharedData().showGui){
+        getSharedData().showGui = false;
+        ofHideCursor();
+    }else{
+        getSharedData().showGui = true;
+        ofShowCursor();
+    }
 }
 
 string Ripple::getName(){

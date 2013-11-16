@@ -6,4 +6,6 @@
 <Detune_Scale>10</Detune_Scale>
 	<Show_Log>0</Show_Log>
 <Init_Frequency>28.45</Init_Frequency>
+<Freq_scale>0.20008</Freq_scale>
+<Audio_Level>0.5</Audio_Level>
 </group>

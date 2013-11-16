@@ -33,13 +33,13 @@ public:
     float detune;
     float freq[2];
     
-    bool showGui;
     ofxPanel gui;
     ofxFloatSlider initFreq;
     ofxFloatSlider waveLength;
     ofxFloatSlider waveSpeed;
     ofxFloatSlider interp;
     ofxFloatSlider detuneScale;
+    ofxFloatSlider outLevel;
     ofxToggle showLog;
     
     ofxSCSynth *synth;
