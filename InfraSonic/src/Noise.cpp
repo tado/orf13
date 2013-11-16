@@ -2,28 +2,29 @@
 
 
 void Noise::stateEnter(){
-    ofSleepMillis(500);
     synth->create();
+    amp = 0.1;
+    interpAmp = 0.1;
 }
 
 
 void Noise::stateExit(){
     synth->free();
+    ofSleepMillis(500);
 }
 
 void Noise::setup(){
     gui.setup();
     gui.add(freqScale.setup("Freq scale", 0.5, 0.0001, 1.0));
     gui.add(outLevel.setup("Audio Level", 0.5, 0, 1.0));
+    gui.add(showLog.setup("Show Log", false));
     gui.loadFromFile("settings.xml");
-    
+
     width = ofGetWidth() / 2;
     height = ofGetHeight() / 2;
     
     fbo.allocate(width, height);
     shader.load("noise");
-    
-    baseFreq = interpBaseFreq = 20;
     synth = new ofxSCSynth("noise");
 }
 
@@ -43,23 +44,22 @@ void Noise::draw(){
     ofBackground(0);
     if (hands.size() > 0) {
         baseFreq = hands[0].palmPosition().y * freqScale;
-        rq = ofMap(hands[0].palmNormal().y, -1, 1, 0.001, 0.5);
-        delay = ofMap(hands[0].palmNormal().x, -1, 1, 0.05, 2.0);
-
+        rq = ofMap(abs(hands[0].palmNormal().x), 0, 1, 0.0, 0.5);
+        delay = ofMap(abs(hands[0].palmNormal().x), 0, 1, 2.0, 0.1);
         amp = 1.0;
-
     } else {
-        baseFreq = 20;
+        baseFreq = 10;
         rq = 1.0;
         amp = 0.1;
     }
-    interpBaseFreq += (baseFreq - interpBaseFreq) / 20.0;
-    interpAmp += (amp - interpAmp) / 20.0;
+
+    interpBaseFreq += (baseFreq - interpBaseFreq) / 10.0;
+    interpAmp += (amp - interpAmp) / 10.0;
+    
     synth->set("freq", baseFreq);
     synth->set("rq", rq);
     synth->set("amp", outLevel);
     synth->set("delay", delay);
-
     
     float resolution[] = {width, height};
     float time = ofGetElapsedTimef() / 10.0;
@@ -75,7 +75,27 @@ void Noise::draw(){
     ofRect(0, 0, ofGetWidth(), ofGetHeight());
     shader.end();
     fbo.end();
+
+    ofSetColor(255);
     fbo.draw(0, ofGetHeight(), ofGetWidth(), -ofGetHeight());
+    
+    if (showLog) {
+        ofDrawBitmapString("freq = " + ofToString(interpBaseFreq, 0)
+                           + ", rq = " + ofToString(rq, 4)
+                           + ", amp = " + ofToString(amp, 4)
+                           , 20, 20);
+
+        if (hands.size() > 0) {
+            ofDrawBitmapString("palm normal = ("
+                               + ofToString(hands[0].palmNormal().x, 4) + ", "
+                               + ofToString(hands[0].palmNormal().y, 4) + ", "
+                               + ofToString(hands[0].palmNormal().z, 4) + ", "
+                               + ")",
+                               20, 40);
+
+        }
+    }
+
     
     if (getSharedData().showGui) {
         gui.draw();

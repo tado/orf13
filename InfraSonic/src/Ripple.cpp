@@ -1,12 +1,12 @@
 #include "Ripple.h"
 
 void Ripple::stateEnter(){
-    ofSleepMillis(500);
     synth->create();
 }
 
 void Ripple::stateExit(){
     synth->free();
+    ofSleepMillis(500);
 }
 
 void Ripple::setup(){
@@ -39,27 +39,12 @@ void Ripple::update(){
     switch (getSharedData().leap.iGestures){
         case 3:
         case 4:
-            ofSetColor(0);
-            of
             changeState("noise");
             break;
     }
-    /*
-    if( getSharedData().leap.isFrameNew() && hands.size() ){
-        palmNormals.clear();
-        for(int i = 0; i < hands.size(); i++){
-            ofVec3f norm = ofVec3f(hands[i].palmNormal().x, hands[i].palmNormal().y, hands[i].palmNormal().z);
-            palmNormals.push_back(norm);
-        }
-    }
-     */
 }
 
 void Ripple::draw(){
-    ofSetColor(255);
-    float resolution[] = {width, height};
-    float time = ofGetElapsedTimef();
-    
     if (hands.size() > 0) {
         baseFreq = hands[0].palmPosition().y / 6.0;
         detune = baseFreq * hands[0].palmNormal().x / detuneScale;
@@ -76,7 +61,10 @@ void Ripple::draw(){
     synth->set("freq_l", freq[0]);
     synth->set("freq_r", freq[1]);
     synth->set("amp", outLevel);
-
+    
+    float resolution[] = {width, height};
+    float time = ofGetElapsedTimef();
+    
     fbo.begin();
     shader.begin();
     shader.setUniform1f("time", time);
@@ -88,7 +76,8 @@ void Ripple::draw(){
     ofRect(0, 0, ofGetWidth(), ofGetHeight());
     shader.end();
     fbo.end();
-    
+
+    ofSetColor(255);
     fbo.draw(0, ofGetHeight(), ofGetWidth(), -ofGetHeight());
     
     if (showLog) {

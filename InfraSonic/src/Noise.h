@@ -37,6 +37,7 @@ public:
     ofxPanel gui;
     ofxFloatSlider freqScale;
     ofxFloatSlider outLevel;
+    ofxToggle showLog;
     
     ofxSCSynth *synth;
 };
