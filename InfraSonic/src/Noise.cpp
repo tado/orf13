@@ -23,7 +23,6 @@ void Noise::setup(){
     
     baseFreq = interpBaseFreq = 20;
     synth = new ofxSCSynth("noise");
-    synth->set("delay", 0.1);
 }
 
 void Noise::update(){
@@ -33,8 +32,10 @@ void Noise::update(){
 void Noise::draw(){
     ofBackground(0);
     if (hands.size() > 0) {
-        baseFreq = hands[0].palmPosition().y / 3.0;
-        rq = ofMap(hands[0].palmNormal().y, -1, 1, 0.001, 1.7);
+        baseFreq = hands[0].palmPosition().y / 5.0;
+        rq = ofMap(hands[0].palmNormal().y, -1, 1, 0.001, 0.5);
+        delay = ofMap(hands[0].palmNormal().x, -1, 1, 0.05, 2.0);
+
         amp = 1.0;
 
     } else {
@@ -46,6 +47,8 @@ void Noise::draw(){
     interpAmp += (amp - interpAmp) / 20.0;
     synth->set("freq", baseFreq);
     synth->set("rq", rq);
+    synth->set("delay", delay);
+
     
     float resolution[] = {width, height};
     float time = ofGetElapsedTimef() / 10.0;
@@ -54,7 +57,7 @@ void Noise::draw(){
     shader.begin();
     shader.setUniform1f("time", time);
     shader.setUniform2fv("resolution", resolution);
-    shader.setUniform1f("freq", baseFreq);
+    shader.setUniform1f("freq", baseFreq * 10);
     shader.setUniform1f("rq", rq);
     shader.setUniform1f("amp", interpAmp);
 

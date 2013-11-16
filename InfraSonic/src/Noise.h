@@ -32,6 +32,7 @@ public:
     float amp;
     float interpAmp;
     float rq;
+    float delay;
     
     bool showGui;
     ofxPanel gui;

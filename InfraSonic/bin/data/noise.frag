@@ -16,7 +16,6 @@ vec3 tri( vec3 p ){
     return vec3( tri(p.x), tri(p.y), tri(p.z) );
 }
 
-// public domain
 #define N 30
 #define PI2 (3.14159265*2.0)
 void main( void ) {
@@ -44,9 +43,9 @@ void main( void ) {
         v = tri( v ); // fold
         vsum += v;
         vsum *= 0.9;
-    
+        
     }
     v = vsum *.3;
     gl_FragColor = vec4( sin(v * PI2 * 4.0)*.5+.5, amp);
-
+    
 }
