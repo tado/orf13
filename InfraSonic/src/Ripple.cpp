@@ -39,7 +39,8 @@ void Ripple::update(){
     switch (getSharedData().leap.iGestures){
         case 3:
         case 4:
-            ofBackground(0);
+            ofSetColor(0);
+            of
             changeState("noise");
             break;
     }
