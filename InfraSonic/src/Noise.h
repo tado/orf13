@@ -34,8 +34,9 @@ public:
     float rq;
     float delay;
     
-    bool showGui;
     ofxPanel gui;
+    ofxFloatSlider freqScale;
+    ofxFloatSlider outLevel;
     
     ofxSCSynth *synth;
 };
