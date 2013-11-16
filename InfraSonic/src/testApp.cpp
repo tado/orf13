@@ -5,7 +5,9 @@
 //--------------------------------------------------------------
 void testApp::setup(){
     ofxSuperColliderServer::init();
+    ofHideCursor();
     
+    //Leap init
     stateMachine.getSharedData().leap.open();
 
 	// initialise state machine
@@ -31,6 +33,12 @@ void testApp::draw(){
 void testApp::keyPressed(int key){
     if (key == 'f') {
         ofToggleFullscreen();
+    }
+    if (key == '1') {
+        stateMachine.changeState("ripple");
+    }
+    if (key == '2') {
+        stateMachine.changeState("noise");
     }
 }
 

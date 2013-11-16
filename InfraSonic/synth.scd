@@ -12,7 +12,7 @@ SynthDef("noise", {
 	var noise2 = RLPF.ar(LFNoise2.ar([8000,8100], 1),freq * 1.5, rq);
 	var in = noise1 + noise2;
 	//var out = Limiter.ar(CombN.ar(in, delay, delay, 4));
-	var out = in;
+	var out = Limiter.ar(in, 2.0);
 	Out.ar(0, out);
 }).store;
 )

@@ -29,6 +29,8 @@ public:
     float width, height;
     float baseFreq;
     float interpBaseFreq;
+    float amp;
+    float interpAmp;
     float rq;
     
     bool showGui;

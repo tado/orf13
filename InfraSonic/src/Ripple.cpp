@@ -2,7 +2,6 @@
 
 void Ripple::setup(){
     showGui = false;
-    ofHideCursor();
     gui.setup();
     gui.add(initFreq.setup("Init Frequency", 50, 10, 100));
     gui.add(waveLength.setup("Wave Length", 200, 0, 800));

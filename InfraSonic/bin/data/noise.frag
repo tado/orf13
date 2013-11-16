@@ -7,6 +7,7 @@ uniform vec2 mouse;
 uniform vec2 resolution;
 uniform float freq;
 uniform float rq;
+uniform float amp;
 
 float  tri( float x ){
     return (abs(fract(x)-0.5)-0.25);
@@ -20,7 +21,7 @@ vec3 tri( vec3 p ){
 #define PI2 (3.14159265*2.0)
 void main( void ) {
     vec3 v = vec3( (gl_FragCoord.xy - resolution/2.0) / min(resolution.y,resolution.x) * 1.5, 0.0);
-    v.z = time;
+    v.z = time * 10.0;
     
     float mx = sin(1.32 + time * 0.0037312) * 1.45 + 0.5;
     float my = cos(1.01 + time * 0.0023312) * 1.45 + 0.5;
@@ -46,6 +47,6 @@ void main( void ) {
     
     }
     v = vsum *.3;
-    gl_FragColor = vec4( sin(v * PI2 * 4.0)*.5+.5, 1.0 );
+    gl_FragColor = vec4( sin(v * PI2 * 4.0)*.5+.5, amp);
 
 }
