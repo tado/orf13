@@ -95,7 +95,6 @@ void Noise::draw(){
 
         }
     }
-
     
     if (getSharedData().showGui) {
         gui.draw();
