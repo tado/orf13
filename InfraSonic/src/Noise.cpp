@@ -2,6 +2,7 @@
 
 
 void Noise::stateEnter(){
+    ofSleepMillis(500);
     synth->create();
 }
 
@@ -25,8 +26,16 @@ void Noise::setup(){
     synth = new ofxSCSynth("noise");
 }
 
-void Noise::update(){
+void Noise::update(){    
     hands = getSharedData().leap.getLeapHands();
+    
+    switch (getSharedData().leap.iGestures){
+        case 3:
+        case 4:
+            ofBackground(0);
+            changeState("ripple");
+            break;
+    }
 }
 
 void Noise::draw(){
@@ -64,7 +73,6 @@ void Noise::draw(){
     ofRect(0, 0, ofGetWidth(), ofGetHeight());
     shader.end();
     fbo.end();
-    
     fbo.draw(0, ofGetHeight(), ofGetWidth(), -ofGetHeight());
 }
 

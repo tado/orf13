@@ -1,5 +1,14 @@
 #include "Ripple.h"
 
+void Ripple::stateEnter(){
+    ofSleepMillis(500);
+    synth->create();
+}
+
+void Ripple::stateExit(){
+    synth->free();
+}
+
 void Ripple::setup(){
     showGui = false;
     gui.setup();
@@ -24,16 +33,17 @@ void Ripple::setup(){
     synth = new ofxSCSynth("ripple");   
 }
 
-void Ripple::stateEnter(){
-    synth->create();
-}
-
-void Ripple::stateExit(){
-    synth->free();
-}
-
 void Ripple::update(){
     hands = getSharedData().leap.getLeapHands();
+    
+    switch (getSharedData().leap.iGestures){
+        case 3:
+        case 4:
+            ofBackground(0);
+            changeState("noise");
+            break;
+    }
+    /*
     if( getSharedData().leap.isFrameNew() && hands.size() ){
         palmNormals.clear();
         for(int i = 0; i < hands.size(); i++){
@@ -41,15 +51,17 @@ void Ripple::update(){
             palmNormals.push_back(norm);
         }
     }
+     */
 }
 
 void Ripple::draw(){
     ofSetColor(255);
     float resolution[] = {width, height};
     float time = ofGetElapsedTimef();
+    
     if (hands.size() > 0) {
         baseFreq = hands[0].palmPosition().y / 6.0;
-        detune = baseFreq * palmNormals[0].x / detuneScale;
+        detune = baseFreq * hands[0].palmNormal().x / detuneScale;
     } else {
         baseFreq = initFreq;
         detune = 1.0;

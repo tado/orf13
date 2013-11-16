@@ -9,19 +9,20 @@ void testApp::setup(){
     
     //Leap init
     stateMachine.getSharedData().leap.open();
+    stateMachine.getSharedData().leap.setupGestures();
 
 	// initialise state machine
 	stateMachine.addState<Ripple>();
     stateMachine.addState<Noise>();
-	//ofHideCursor();
     
-    //stateMachine.changeState("ripple");
-    stateMachine.changeState("noise");
+    stateMachine.changeState("ripple");
+    //stateMachine.changeState("noise");
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-
+    stateMachine.getSharedData().leap.updateGestures();
+    stateMachine.getSharedData().leap.markFrameAsOld();
 }
 
 //--------------------------------------------------------------
