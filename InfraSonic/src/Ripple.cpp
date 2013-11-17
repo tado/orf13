@@ -16,7 +16,7 @@ void Ripple::setup(){
     gui.add(waveSpeed.setup("Wave Speed", 100, 0, 200));
     gui.add(interp.setup("Interpolate", 100, 1, 800));
     gui.add(detuneScale.setup("Detune Scale", 10, 1, 20));
-    gui.add(outLevel.setup("Audio Level", 0.5, 0, 1.0));
+    gui.add(outLevel.setup("Level Ripple", 0.5, 0, 1.0));
     gui.add(showLog.setup("Show Log", false));
     gui.loadFromFile("settings.xml");
     
@@ -39,7 +39,7 @@ void Ripple::update(){
     switch (getSharedData().leap.iGestures){
         case 3:
         case 4:
-            changeState("noise");
+            changeState("harmony");
             break;
     }
 }

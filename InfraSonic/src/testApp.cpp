@@ -1,6 +1,7 @@
 #include "testApp.h"
 #include "Ripple.h"
 #include "Noise.h"
+#include "Harmony.h"
 
 //--------------------------------------------------------------
 void testApp::setup(){
@@ -14,9 +15,13 @@ void testApp::setup(){
 	// initialise state machine
 	stateMachine.addState<Ripple>();
     stateMachine.addState<Noise>();
+    stateMachine.addState<Harmony>();
+
     
-    stateMachine.changeState("ripple");
+    //stateMachine.changeState("ripple");
     //stateMachine.changeState("noise");
+    stateMachine.changeState("harmony");
+
 }
 
 //--------------------------------------------------------------
@@ -40,6 +45,9 @@ void testApp::keyPressed(int key){
     }
     if (key == '2') {
         stateMachine.changeState("noise");
+    }
+    if (key == '3') {
+        stateMachine.changeState("harmony");
     }
 }
 

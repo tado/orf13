@@ -15,8 +15,8 @@ void Noise::stateExit(){
 
 void Noise::setup(){
     gui.setup();
-    gui.add(freqScale.setup("Freq scale", 0.5, 0.0001, 1.0));
-    gui.add(outLevel.setup("Audio Level", 0.5, 0, 1.0));
+    gui.add(freqScale.setup("Freq Noise", 0.5, 0.0001, 1.0));
+    gui.add(outLevel.setup("Level Noise", 0.5, 0, 1.0));
     gui.add(showLog.setup("Show Log", false));
     gui.loadFromFile("settings.xml");
 

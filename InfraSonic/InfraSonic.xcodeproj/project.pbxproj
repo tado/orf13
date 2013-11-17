@@ -43,6 +43,8 @@
 		1899DF5D1833303C00FB4375 /* libscsynth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1899DE5E1833303B00FB4375 /* libscsynth.a */; };
 		1899DF5E1833303C00FB4375 /* libsndfile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1899DE5F1833303B00FB4375 /* libsndfile.a */; };
 		1899DF5F1833303C00FB4375 /* ofxSuperColliderServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1899DE611833303C00FB4375 /* ofxSuperColliderServer.cpp */; };
+		18A81415183853F8005BDD35 /* lines.frag in Sources */ = {isa = PBXBuildFile; fileRef = 18A81414183853F8005BDD35 /* lines.frag */; };
+		18A814181838542E005BDD35 /* Harmony.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18A814161838542E005BDD35 /* Harmony.cpp */; };
 		18F3C8DE18334E7A00A6D092 /* libLeap.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F3C8C818334E7A00A6D092 /* libLeap.dylib */; };
 		18F3C8DF18334E7A00A6D092 /* Leap.lib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F3C8CB18334E7A00A6D092 /* Leap.lib */; };
 		18F3C8E018334E7A00A6D092 /* Leapd.lib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F3C8CD18334E7A00A6D092 /* Leapd.lib */; };
@@ -257,6 +259,10 @@
 		1899DE5F1833303B00FB4375 /* libsndfile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsndfile.a; sourceTree = "<group>"; };
 		1899DE611833303C00FB4375 /* ofxSuperColliderServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSuperColliderServer.cpp; sourceTree = "<group>"; };
 		1899DE621833303C00FB4375 /* ofxSuperColliderServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSuperColliderServer.h; sourceTree = "<group>"; };
+		18A81414183853F8005BDD35 /* lines.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = lines.frag; path = bin/data/lines.frag; sourceTree = SOURCE_ROOT; };
+		18A814161838542E005BDD35 /* Harmony.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Harmony.cpp; sourceTree = "<group>"; };
+		18A814171838542E005BDD35 /* Harmony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Harmony.h; sourceTree = "<group>"; };
+		18A8141918385880005BDD35 /* synth.scd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = synth.scd; sourceTree = SOURCE_ROOT; };
 		18F3C8C218334E7A00A6D092 /* Leap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Leap.h; sourceTree = "<group>"; };
 		18F3C8C318334E7A00A6D092 /* LeapMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeapMath.h; sourceTree = "<group>"; };
 		18F3C8C618334E7A00A6D092 /* libLeap.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = libLeap.so; sourceTree = "<group>"; };
@@ -822,9 +828,13 @@
 				1899B5F218330C5300FB4375 /* Ripple.cpp */,
 				1883C1B81836274D002920B6 /* Noise.h */,
 				1883C1B71836274D002920B6 /* Noise.cpp */,
+				18A814171838542E005BDD35 /* Harmony.h */,
+				18A814161838542E005BDD35 /* Harmony.cpp */,
 				1899B5F518330C8D00FB4375 /* SharedData.h */,
 				1883C1BB18363E8F002920B6 /* ripple.frag */,
 				1883C1BA18363E8F002920B6 /* noise.frag */,
+				18A81414183853F8005BDD35 /* lines.frag */,
+				18A8141918385880005BDD35 /* synth.scd */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -954,10 +964,12 @@
 				1899CB1318332D9800FB4375 /* ofxOscParameterSync.cpp in Sources */,
 				1899CB1018332D9800FB4375 /* OscTypes.cpp in Sources */,
 				1899CB0F18332D9800FB4375 /* OscReceivedElements.cpp in Sources */,
+				18A81415183853F8005BDD35 /* lines.frag in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
 				1899C96218332B5600FB4375 /* ofxSCGroup.cpp in Sources */,
 				1883C1BC18363E8F002920B6 /* noise.frag in Sources */,
 				1899B40918330B8C00FB4375 /* ofxLabel.cpp in Sources */,
+				18A814181838542E005BDD35 /* Harmony.cpp in Sources */,
 				1899DF5F1833303C00FB4375 /* ofxSuperColliderServer.cpp in Sources */,
 				1899C96118332B5600FB4375 /* ofxSCBus.cpp in Sources */,
 				1899CB0918332D9800FB4375 /* NetworkingUtils.cpp in Sources */,
