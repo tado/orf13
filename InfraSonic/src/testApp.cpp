@@ -18,9 +18,9 @@ void testApp::setup(){
     stateMachine.addState<Harmony>();
 
     
-    //stateMachine.changeState("ripple");
+    stateMachine.changeState("ripple");
     //stateMachine.changeState("noise");
-    stateMachine.changeState("harmony");
+    //stateMachine.changeState("harmony");
 
 }
 
