@@ -31,6 +31,7 @@ public:
     float baseFreq;
     float interpBaseFreq;
     float rq;
+    float detune;
     
     ofxPanel gui;
     ofxFloatSlider freqScale;

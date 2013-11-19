@@ -4,10 +4,9 @@ void Harmony::stateEnter(){
     synth->create();
 }
 
-
 void Harmony::stateExit(){
     synth->free();
-    ofSleepMillis(500);
+    ofSleepMillis(1000);
 }
 
 void Harmony::setup(){
@@ -42,13 +41,15 @@ void Harmony::draw(){
     ofBackground(0);
     if (hands.size() > 0) {
         baseFreq = hands[0].palmPosition().y * 0.4;
+        detune = hands[0].palmNormal().x;
     } else {
         baseFreq = 10;
     }
     
     interpBaseFreq += (baseFreq - interpBaseFreq) / 20.0;
     synth->set("lpf", interpBaseFreq * freqScale);
-    synth->set("rq", 0.5);
+    synth->set("rq", 0.4);
+    synth->set("detune", detune);
     synth->set("amp", outLevel);
 
     float resolution[] = {width, height};

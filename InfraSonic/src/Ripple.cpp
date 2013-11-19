@@ -6,7 +6,7 @@ void Ripple::stateEnter(){
 
 void Ripple::stateExit(){
     synth->free();
-    ofSleepMillis(500);
+    ofSleepMillis(1000);
 }
 
 void Ripple::setup(){

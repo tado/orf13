@@ -3,14 +3,11 @@
 
 void Noise::stateEnter(){
     synth->create();
-    amp = 0.1;
-    interpAmp = 0.1;
 }
-
 
 void Noise::stateExit(){
     synth->free();
-    ofSleepMillis(500);
+    ofSleepMillis(1000);
 }
 
 void Noise::setup(){
