@@ -7,6 +7,7 @@
 void testApp::setup(){
     ofxSuperColliderServer::init();
     ofHideCursor();
+    ofEnableAlphaBlending();
     
     //Leap init
     stateMachine.getSharedData().leap.open();

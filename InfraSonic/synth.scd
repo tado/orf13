@@ -17,6 +17,24 @@ SynthDef("noise", {
 }).store;
 
 SynthDef("harmony", {
+	arg lpf=100, rq=0.4, amp = 1.0, detune=0.5;
+	var mix;
+	mix = Mix.fill(30, {arg i;
+		var out;
+		out = Saw.ar([17+detune, 17-detune] * (1.5 * (i+1)));
+		out;
+
+	});
+	mix = mix * EnvGen.kr(Env.new([0,1], [10], 'sine'));
+	mix = RLPF.ar(mix, lpf, rq);
+	mix = GVerb.ar(mix, 100, 1, drylevel:0.5);
+	Out.ar(0, Limiter.ar(mix) * amp);
+}).store;
+
+
+
+/*
+SynthDef("harmony", {
         arg lpf=100, rq=0.4, amp = 1.0, detune=0.5;
         var mix;
         mix = Mix.fill(12, {arg i;
@@ -49,5 +67,6 @@ SynthDef("harmony", {
         Out.ar(0, Limiter.ar(mix) * amp);
 
 }).store;
+*/
 )
 
