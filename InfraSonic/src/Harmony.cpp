@@ -6,6 +6,7 @@ void Harmony::stateEnter(){
 
 void Harmony::stateExit(){
     synth->free();
+    interpBaseFreq = baseFreq = 10;
     ofSleepMillis(1000);
 }
 
@@ -23,6 +24,8 @@ void Harmony::setup(){
     fbo.allocate(width, height);
     shader.load("lines");
     synth = new ofxSCSynth("harmony");
+    
+    baseFreq = 10;
 }
 
 void Harmony::update(){
@@ -55,13 +58,15 @@ void Harmony::draw(){
     float resolution[] = {width, height};
     float time = ofGetElapsedTimef() / 10.0;
     
-    float level = ofMap(interpBaseFreq, 0, 800, 1.0, 0.9);
+    //float level = ofMap(interpBaseFreq, 0, 800, 1.0, 0.9);
+    int num = int(ofMap(interpBaseFreq, 0, 800, 2, 200));
     
     fbo.begin();
     shader.begin();
     shader.setUniform1f("time", time * speed);
     shader.setUniform2fv("resolution", resolution);
-    shader.setUniform1f("level", level);
+    //shader.setUniform1f("level", level);
+    shader.setUniform1i("num", num);
     
     ofRect(0, 0, ofGetWidth(), ofGetHeight());
     shader.end();

@@ -1,6 +1,6 @@
 <group>
-	<Wave_Length>400</Wave_Length>
-	<Wave_Speed>110</Wave_Speed>
+	<Wave_Length>220</Wave_Length>
+	<Wave_Speed>80</Wave_Speed>
 <group/>
 <Interpolate>424.47</Interpolate>
 <Detune_Scale>10</Detune_Scale>
@@ -8,9 +8,9 @@
 <Init_Frequency>10</Init_Frequency>
 <Freq_scale>0.20008</Freq_scale>
 <Audio_Level>0.5</Audio_Level>
-<Line_speed>2.92</Line_speed>
+<Line_speed>1.26</Line_speed>
 <Freq_Harmoy>0.60007</Freq_Harmoy>
-	<Level_Harmony>1.55</Level_Harmony>
+	<Level_Harmony>0.575</Level_Harmony>
 <Freq_Noise>0.220078</Freq_Noise>
 	<Level_Noise>0.705</Level_Noise>
 <Level_Ripple>0.735</Level_Ripple>

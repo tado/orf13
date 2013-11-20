@@ -6,6 +6,7 @@ void Ripple::stateEnter(){
 
 void Ripple::stateExit(){
     synth->free();
+    interpBaseFreq = baseFreq = 10;
     ofSleepMillis(1000);
 }
 
@@ -27,7 +28,7 @@ void Ripple::setup(){
     shader.load("ripple");
     
     baseFreq = interpBaseFreq = initFreq;
-    detune = 1;
+    detune = 0;
     freq[0] = freq[1] = baseFreq;
     
     synth = new ofxSCSynth("ripple");   
@@ -50,7 +51,7 @@ void Ripple::draw(){
         detune = baseFreq * hands[0].palmNormal().x / detuneScale;
     } else {
         baseFreq = initFreq;
-        detune = 1.0;
+        detune = 0.0;
     }
     
     interpBaseFreq += (baseFreq - interpBaseFreq) / 10.0;

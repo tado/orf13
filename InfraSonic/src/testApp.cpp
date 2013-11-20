@@ -42,10 +42,10 @@ void testApp::keyPressed(int key){
         stateMachine.changeState("ripple");
     }
     if (key == '2') {
-        stateMachine.changeState("noise");
+        stateMachine.changeState("harmony");
     }
     if (key == '3') {
-        stateMachine.changeState("harmony");
+        stateMachine.changeState("noise");
     }
 }
 

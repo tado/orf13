@@ -7,6 +7,8 @@ void Noise::stateEnter(){
 
 void Noise::stateExit(){
     synth->free();
+    interpBaseFreq = baseFreq = 10;
+    interpAmp = amp = 0.01;
     ofSleepMillis(1000);
 }
 
