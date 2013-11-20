@@ -44,16 +44,16 @@ void Harmony::draw(){
     ofBackground(0);
     if (hands.size() > 0) {
         baseFreq = hands[0].palmPosition().y * 0.4;
-        detune = hands[0].palmNormal().x;
+        detune = hands[0].palmNormal().x * 0.1;
     } else {
         baseFreq = 10;
     }
     
-    interpBaseFreq += (baseFreq - interpBaseFreq) / 20.0;
+    interpBaseFreq += (baseFreq - interpBaseFreq) / 4.0;
     synth->set("lpf", interpBaseFreq * freqScale);
-    synth->set("rq", 0.4);
+    synth->set("rq", 1.7);
     synth->set("detune", detune);
-    synth->set("amp", outLevel);
+    synth->set("allAmp", outLevel);
 
     float resolution[] = {width, height};
     float time = ofGetElapsedTimef() / 10.0;

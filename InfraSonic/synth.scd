@@ -17,6 +17,39 @@ SynthDef("noise", {
 }).store;
 
 SynthDef("harmony", {
+	arg base=20, lpf=100, rq=1.7, detune=0.0, allAmp = 2.0;
+	var harm, ratio, s1, s2, s3, s4, s5, s6, s7, s8, w, mod, pul, out, amp;
+	ratio = 1.5;
+	harm = 1.5;
+	amp = 0.2;
+	
+	s1 = Saw.ar([base+detune.rand, base+detune.rand],3.14.rand)*amp
+	+ Saw.ar([base*harm+detune.rand, base*harm+detune.rand],3.14.rand)*amp;
+	s2 = Saw.ar([base+detune.rand, base+detune.rand]*ratio,3.14.rand)*(amp/2.0)
+	+Saw.ar([base*harm+detune.rand, base*harm+detune.rand]*ratio,3.14.rand)*(amp/2.0);
+	s3 = Saw.ar([base+detune.rand, base+detune.rand]*(ratio**2),3.14.rand)*(amp/4.0)
+	+ Saw.ar([base*harm+detune.rand, base*harm+detune.rand]*(ratio**2),3.14.rand)*(amp/4.0);
+	s4 = Saw.ar([base+detune.rand, base+detune.rand]*(ratio**3),3.14.rand)*amp/8.0
+	+ Saw.ar([base*harm+detune.rand, base*harm+detune.rand]*(ratio**3),3.14.rand)*amp/8.0;
+	s5 = Saw.ar([base+detune.rand, base+detune.rand]*(ratio**4),3.14.rand)*amp/16.0
+	+ Saw.ar([base*harm+detune.rand, base*harm+detune.rand]*(ratio**4),3.14.rand)*amp/16.0;
+	s6 = Saw.ar([base+detune.rand, base+detune.rand]*(ratio**5),3.14.rand)*amp/16
+	+ Saw.ar([base*harm+detune.rand, base*harm+detune.rand]*(ratio**5),3.14.rand)*amp/16;
+	
+	out = RLPF.ar(s1+s2+s3+s4+s5+s6, lpf, rq);
+	//2.do({ out = AllpassL.ar(out, 0.1, LFNoise2.kr([rrand(0.0, 0.1),rrand(0.0, 0.1)],0.03,0.2), 2) });
+	//out = PanAz.ar(8, out.at(0), LFSaw.kr(5.0)) + PanAz.ar(8, out.at(1), LFSaw.kr(6.0));
+	//out = out * Decay2.ar(pul, 0.01, 0.3);
+	out = out * EnvGen.kr(Env.new([0,1], [3], 'sine'));
+	32.do({ out = AllpassL.ar(out, 0.1, LFNoise2.kr([rrand(0.0, 0.1),rrand(0.0, 0.1)],0.01,0.06), 4.0) });
+	out = CompanderD.ar(out);
+	Out.ar(0, out * allAmp);
+	
+}).store;
+)
+
+/*
+SynthDef("harmony", {
 	arg lpf=100, rq=0.4, amp = 1.0, detune=0.5;
 	var mix;
 	mix = Mix.fill(30, {arg i;
@@ -32,8 +65,6 @@ SynthDef("harmony", {
 }).store;
 
 
-
-/*
 SynthDef("harmony", {
         arg lpf=100, rq=0.4, amp = 1.0, detune=0.5;
         var mix;
