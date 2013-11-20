@@ -18,6 +18,7 @@ void Ripple::setup(){
     gui.add(interp.setup("Interpolate", 100, 1, 800));
     gui.add(detuneScale.setup("Detune Scale", 10, 1, 20));
     gui.add(outLevel.setup("Level Ripple", 0.5, 0, 1.0));
+    gui.add(autoPlay.setup("autoPlay", false));
     gui.add(showLog.setup("Show Log", false));
     gui.loadFromFile("settings.xml");
     
@@ -46,12 +47,16 @@ void Ripple::update(){
 }
 
 void Ripple::draw(){
-    if (hands.size() > 0) {
-        baseFreq = hands[0].palmPosition().y / 6.0;
-        detune = baseFreq * hands[0].palmNormal().x / detuneScale;
+    if(!autoPlay){
+        if (hands.size() > 0) {
+            baseFreq = hands[0].palmPosition().y / 6.0;
+            detune = baseFreq * hands[0].palmNormal().x / detuneScale;
+        } else {
+            baseFreq = initFreq;
+            detune = 0.0;
+        }
     } else {
-        baseFreq = initFreq;
-        detune = 0.0;
+        calcAutoplay();
     }
     
     interpBaseFreq += (baseFreq - interpBaseFreq) / 10.0;
@@ -109,4 +114,9 @@ void Ripple::mouseReleased(int x, int y, int button){
 
 string Ripple::getName(){
     return "ripple";
+}
+
+void Ripple::calcAutoplay(){
+    baseFreq = sin(ofGetElapsedTimef() / 10.0) * 15 + 50;
+    detune =  sin(ofGetElapsedTimef() / 20.0) * 2.0;
 }

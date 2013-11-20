@@ -18,6 +18,8 @@ public:
     void mouseReleased(int x, int y, int button);
     void exit();
     
+    void calcAutoplay();
+    
     string getName();
     
     //ofxLeapMotion leap;
@@ -40,6 +42,7 @@ public:
     ofxFloatSlider interp;
     ofxFloatSlider detuneScale;
     ofxFloatSlider outLevel;
+    ofxToggle autoPlay;
     ofxToggle showLog;
     
     ofxSCSynth *synth;

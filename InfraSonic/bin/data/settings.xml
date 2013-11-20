@@ -14,4 +14,5 @@
 <Freq_Noise>0.220078</Freq_Noise>
 	<Level_Noise>0.705</Level_Noise>
 <Level_Ripple>0.735</Level_Ripple>
+<autoPlay>1</autoPlay>
 </group>
