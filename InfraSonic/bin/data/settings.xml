@@ -15,6 +15,7 @@
 	<Level_Noise>0.64</Level_Noise>
 <Level_Ripple>0.72</Level_Ripple>
 <autoPlay>0</autoPlay>
-<Level_Pulse>0.875</Level_Pulse>
+<Level_Pulse>0.575</Level_Pulse>
 <Grain_Freq>30.175</Grain_Freq>
+<Pulse_Speed>0.012088</Pulse_Speed>
 </group>

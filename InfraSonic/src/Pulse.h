@@ -29,6 +29,7 @@ public:
     float width, height;
     
     ofxPanel gui;
+    ofxFloatSlider pulseSpeed;
     ofxFloatSlider grainFreq;
     ofxFloatSlider outLevel;
     ofxToggle showLog;

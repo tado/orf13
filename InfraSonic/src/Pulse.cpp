@@ -11,6 +11,7 @@ void Pulse::stateExit(){
 
 void Pulse::setup(){
     gui.setup();
+    gui.add(pulseSpeed.setup("Pulse Speed", 0.01, 0.0001, 0.04));
     gui.add(grainFreq.setup("Grain Freq", 30.0, 5, 100));
     gui.add(outLevel.setup("Level Pulse", 1.0, 0, 5.0));
     gui.add(showLog.setup("Show Log", false));
@@ -41,7 +42,7 @@ void Pulse::update(){
 void Pulse::draw(){
     ofBackground(0);
     if (hands.size() > 0) {
-        float freq = hands[0].palmPosition().y / 100.0 + 4.0;
+        float freq = hands[0].palmPosition().y * pulseSpeed + 4.0;
         float detune = freq * hands[0].palmNormal().x / 1000.0;
         pulseFreq[0] = freq - detune;
         pulseFreq[1] = 0;
