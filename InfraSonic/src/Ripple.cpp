@@ -42,7 +42,7 @@ void Ripple::update(){
         case 3:
         case 4:
             if(!autoPlay) {
-                changeState("noise");
+                changeState("pulse");
             }
             break;
     }

@@ -45,6 +45,8 @@
 		1899DF5F1833303C00FB4375 /* ofxSuperColliderServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1899DE611833303C00FB4375 /* ofxSuperColliderServer.cpp */; };
 		18A81415183853F8005BDD35 /* lines.frag in Sources */ = {isa = PBXBuildFile; fileRef = 18A81414183853F8005BDD35 /* lines.frag */; };
 		18A814181838542E005BDD35 /* Harmony.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18A814161838542E005BDD35 /* Harmony.cpp */; };
+		18E4ACDF183F7EA3008F48EA /* pulse.frag in Sources */ = {isa = PBXBuildFile; fileRef = 18E4ACDE183F7EA3008F48EA /* pulse.frag */; };
+		18E4ACE2183F8063008F48EA /* Pulse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18E4ACE0183F8063008F48EA /* Pulse.cpp */; };
 		18F3C8DE18334E7A00A6D092 /* libLeap.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F3C8C818334E7A00A6D092 /* libLeap.dylib */; };
 		18F3C8DF18334E7A00A6D092 /* Leap.lib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F3C8CB18334E7A00A6D092 /* Leap.lib */; };
 		18F3C8E018334E7A00A6D092 /* Leapd.lib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F3C8CD18334E7A00A6D092 /* Leapd.lib */; };
@@ -263,6 +265,9 @@
 		18A814161838542E005BDD35 /* Harmony.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Harmony.cpp; sourceTree = "<group>"; };
 		18A814171838542E005BDD35 /* Harmony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Harmony.h; sourceTree = "<group>"; };
 		18A8141918385880005BDD35 /* synth.scd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = synth.scd; sourceTree = SOURCE_ROOT; };
+		18E4ACDE183F7EA3008F48EA /* pulse.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = pulse.frag; path = bin/data/pulse.frag; sourceTree = SOURCE_ROOT; };
+		18E4ACE0183F8063008F48EA /* Pulse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pulse.cpp; sourceTree = "<group>"; };
+		18E4ACE1183F8063008F48EA /* Pulse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pulse.h; sourceTree = "<group>"; };
 		18F3C8C218334E7A00A6D092 /* Leap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Leap.h; sourceTree = "<group>"; };
 		18F3C8C318334E7A00A6D092 /* LeapMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeapMath.h; sourceTree = "<group>"; };
 		18F3C8C618334E7A00A6D092 /* libLeap.so */ = {isa = PBXFileReference; lastKnownFileType = file; path = libLeap.so; sourceTree = "<group>"; };
@@ -830,10 +835,13 @@
 				1883C1B71836274D002920B6 /* Noise.cpp */,
 				18A814171838542E005BDD35 /* Harmony.h */,
 				18A814161838542E005BDD35 /* Harmony.cpp */,
+				18E4ACE1183F8063008F48EA /* Pulse.h */,
+				18E4ACE0183F8063008F48EA /* Pulse.cpp */,
 				1899B5F518330C8D00FB4375 /* SharedData.h */,
 				1883C1BB18363E8F002920B6 /* ripple.frag */,
 				1883C1BA18363E8F002920B6 /* noise.frag */,
 				18A81414183853F8005BDD35 /* lines.frag */,
+				18E4ACDE183F7EA3008F48EA /* pulse.frag */,
 				18A8141918385880005BDD35 /* synth.scd */,
 			);
 			path = src;
@@ -941,6 +949,7 @@
 				1899C96318332B5600FB4375 /* ofxSCNode.cpp in Sources */,
 				1899CB0A18332D9800FB4375 /* UdpSocket.cpp in Sources */,
 				1899C96518332B5600FB4375 /* ofxSCServer.cpp in Sources */,
+				18E4ACE2183F8063008F48EA /* Pulse.cpp in Sources */,
 				1899B40D18330B8C00FB4375 /* ofxToggle.cpp in Sources */,
 				1899C96418332B5600FB4375 /* ofxSCResourceAllocator.cpp in Sources */,
 				1883C1BD18363E8F002920B6 /* ripple.frag in Sources */,
@@ -968,6 +977,7 @@
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
 				1899C96218332B5600FB4375 /* ofxSCGroup.cpp in Sources */,
 				1883C1BC18363E8F002920B6 /* noise.frag in Sources */,
+				18E4ACDF183F7EA3008F48EA /* pulse.frag in Sources */,
 				1899B40918330B8C00FB4375 /* ofxLabel.cpp in Sources */,
 				18A814181838542E005BDD35 /* Harmony.cpp in Sources */,
 				1899DF5F1833303C00FB4375 /* ofxSuperColliderServer.cpp in Sources */,

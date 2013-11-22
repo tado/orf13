@@ -46,6 +46,15 @@ SynthDef("harmony", {
 	Out.ar(0, out * allAmp);
 	
 }).store;
+
+SynthDef("pulse", {
+	arg freq_c = 0, freq_r = 40, freq_l = 40.4, amp = 1.0, pulse_l = 20.0, pulse_r = 20.0, length = 0.5, allAmp = 1.0;
+	var out;
+    //out = SinOsc.ar([freq_c, freq_c], 3.14.rand, LFPulse.ar([pulse_l, pulse_r], 3.14.rand, length, amp * 0.5));
+	out = SinOsc.ar([freq_l, freq_r], 3.14.rand, LFPulse.ar([pulse_l, pulse_r], 3.14.rand, length, amp));
+	Out.ar(0, out * allAmp);
+}).store;
+
 )
 
 /*

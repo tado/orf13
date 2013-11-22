@@ -2,9 +2,12 @@
 #include "Ripple.h"
 #include "Noise.h"
 #include "Harmony.h"
+#include "Pulse.h"
 
 //--------------------------------------------------------------
 void testApp::setup(){
+    ofSetFrameRate(60);
+    ofSetVerticalSync(true);
     ofxSuperColliderServer::init();
     ofHideCursor();
     ofEnableAlphaBlending();
@@ -17,6 +20,7 @@ void testApp::setup(){
 	stateMachine.addState<Ripple>();
     stateMachine.addState<Noise>();
     stateMachine.addState<Harmony>();
+    stateMachine.addState<Pulse>();
 
     // select state
     stateMachine.changeState("ripple");
@@ -46,6 +50,9 @@ void testApp::keyPressed(int key){
     }
     if (key == '3') {
         stateMachine.changeState("noise");
+    }
+    if (key == '4') {
+        stateMachine.changeState("pulse");
     }
 }
 

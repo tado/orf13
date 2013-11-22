@@ -43,7 +43,7 @@ void Harmony::update(){
 void Harmony::draw(){
     ofBackground(0);
     if (hands.size() > 0) {
-        baseFreq = hands[0].palmPosition().y * 0.4;
+        baseFreq = hands[0].palmPosition().y / 20.0;
         detune = hands[0].palmNormal().x * 0.1;
     } else {
         baseFreq = 10;

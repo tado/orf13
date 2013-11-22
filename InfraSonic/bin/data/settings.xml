@@ -15,4 +15,5 @@
 	<Level_Noise>0.705</Level_Noise>
 <Level_Ripple>0.72</Level_Ripple>
 <autoPlay>0</autoPlay>
+<Level_Pulse>1.025</Level_Pulse>
 </group>
