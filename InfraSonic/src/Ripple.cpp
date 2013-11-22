@@ -7,7 +7,7 @@ void Ripple::stateEnter(){
 void Ripple::stateExit(){
     synth->free();
     interpBaseFreq = baseFreq = 10;
-    ofSleepMillis(1000);
+    ofSleepMillis(500);
 }
 
 void Ripple::setup(){
@@ -41,7 +41,9 @@ void Ripple::update(){
     switch (getSharedData().leap.iGestures){
         case 3:
         case 4:
-            changeState("harmony");
+            if(!autoPlay) {
+                changeState("noise");
+            }
             break;
     }
 }
@@ -117,6 +119,6 @@ string Ripple::getName(){
 }
 
 void Ripple::calcAutoplay(){
-    baseFreq = sin(ofGetElapsedTimef() / 10.0) * 15 + 50;
+    baseFreq = sin(ofGetElapsedTimef() / 10.0) * 10 + 35;
     detune =  sin(ofGetElapsedTimef() / 20.0) * 2.0;
 }

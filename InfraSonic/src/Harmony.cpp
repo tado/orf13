@@ -7,7 +7,7 @@ void Harmony::stateEnter(){
 void Harmony::stateExit(){
     synth->free();
     interpBaseFreq = baseFreq = 10;
-    ofSleepMillis(1000);
+    ofSleepMillis(500);
 }
 
 void Harmony::setup(){

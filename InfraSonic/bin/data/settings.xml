@@ -10,7 +10,7 @@
 <Audio_Level>0.5</Audio_Level>
 <Line_speed>1.26</Line_speed>
 <Freq_Harmoy>1.10005</Freq_Harmoy>
-	<Level_Harmony>3.5</Level_Harmony>
+	<Level_Harmony>2.025</Level_Harmony>
 <Freq_Noise>0.220078</Freq_Noise>
 	<Level_Noise>0.705</Level_Noise>
 <Level_Ripple>0.72</Level_Ripple>
