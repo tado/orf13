@@ -6,11 +6,9 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
-    ofSetFrameRate(60);
-    ofSetVerticalSync(true);
     ofxSuperColliderServer::init();
     ofHideCursor();
-    ofEnableAlphaBlending();
+    //ofEnableAlphaBlending();
     
     //Leap init
     stateMachine.getSharedData().leap.open();

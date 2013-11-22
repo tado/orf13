@@ -11,6 +11,7 @@ void Pulse::stateExit(){
 
 void Pulse::setup(){
     gui.setup();
+    gui.add(grainFreq.setup("Grain Freq", 30.0, 5, 100));
     gui.add(outLevel.setup("Level Pulse", 1.0, 0, 5.0));
     gui.add(showLog.setup("Show Log", false));
     gui.loadFromFile("settings.xml");
@@ -40,15 +41,16 @@ void Pulse::update(){
 void Pulse::draw(){
     ofBackground(0);
     if (hands.size() > 0) {
-        float freq = hands[0].palmPosition().y / 40.0 + 1.0;
-        float detune = freq * hands[0].palmNormal().x / 4.0;
+        float freq = hands[0].palmPosition().y / 100.0 + 4.0;
+        float detune = freq * hands[0].palmNormal().x / 1000.0;
         pulseFreq[0] = freq - detune;
         pulseFreq[1] = 0;
         pulseFreq[2] = freq + detune;
     } else {
-        pulseFreq[0] = pulseFreq[1] = pulseFreq[2] = 6.0;
+        pulseFreq[0] = pulseFreq[1] = pulseFreq[2] = 4.0;
     }
 
+    synth->set("freq", grainFreq);
     synth->set("pulse_l", pulseFreq[0]);
     synth->set("pulse_r", pulseFreq[2]);
     synth->set("allAmp", outLevel);
