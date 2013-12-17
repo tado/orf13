@@ -53,9 +53,11 @@ void Ripple::draw(){
         if (hands.size() > 0) {
             baseFreq = hands[0].palmPosition().y / 6.0;
             detune = baseFreq * hands[0].palmNormal().x / detuneScale;
+            amp = 1.0;
         } else {
             baseFreq = initFreq;
             detune = 0.0;
+            amp = 0.0;
         }
     } else {
         calcAutoplay();
@@ -68,7 +70,7 @@ void Ripple::draw(){
     
     synth->set("freq_l", freq[0]);
     synth->set("freq_r", freq[1]);
-    synth->set("amp", outLevel);
+    synth->set("amp", outLevel * amp);
     
     float resolution[] = {width, height};
     float time = ofGetElapsedTimef();

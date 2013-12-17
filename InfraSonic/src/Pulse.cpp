@@ -48,7 +48,9 @@ void Pulse::draw(){
         pulseFreq[1] = 0;
         pulseFreq[2] = freq + detune;
     } else {
-        pulseFreq[0] = pulseFreq[1] = pulseFreq[2] = 4.0;
+        pulseFreq[0] = 4.1;
+        pulseFreq[1] = 0.0;
+        pulseFreq[2] = 3.9;
     }
 
     synth->set("freq", grainFreq);

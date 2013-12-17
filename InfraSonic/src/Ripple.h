@@ -45,5 +45,7 @@ public:
     ofxToggle autoPlay;
     ofxToggle showLog;
     
+    float amp;
+    
     ofxSCSynth *synth;
 };
